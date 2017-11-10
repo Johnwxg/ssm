@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 指定默认编码集 ，作用于HttpServletRequest的setCharacterEncoding（）和freemarker，vilocity的输出 -->  
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+    <!-- 当struts配置文件修改时是否自动加载 --> 
+    <constant name="struts.configuration.xmlreload" value="true"></constant>
+     <!-- 开发模式下打印详细的错误信息 -->  
+    <constant name="struts.devMode" value="true"></constant>
+    <constant name="struts.locale" value="zh_CN"></constant>
+    <constant name="struts.ui.theme" value="xhtml"/>
+    
+    <package name="user" namespace="/user" extends="struts-default">
+        <action name="user_*" class="userAction" method="{1}">
+            <result name="success">/404.html</result>  
+            <result name="input">/index.jsp</result>  
+        </action>
+    </package>
+    
+
+</struts>

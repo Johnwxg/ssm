@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.bean.User">
+    <!-- 加载myBatis中实体类的sql映射语句文件 -->
+    <resultMap type="com.ssm.bean.User" id="userResult">
+        <result property="id" column="ID" jdbcType="INTEGER" />  
+        <result column="USER_NAME" property="usernm" jdbcType="VARCHAR" />
+        <result column="PASSWORE" property="pwd" jdbcType="VARCHAR" />
+        <result column="USER_AGE" property="age" jdbcType="INTEGER" />
+        <result column="USER_ADDRESS" property="addr" jdbcType="VARCHAR" />
+    </resultMap>
+    <!-- 查询用户信息 -->
+    <select id="queryUserInfo" parameterType="user" resultMap="userResult">
+        select * from t_pb_user where USER_NAME=#{usernm} and PASSWORE = #{pwd}
+    </select>
+    
+
+</mapper>
